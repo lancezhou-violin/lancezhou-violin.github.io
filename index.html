@@ -1,25 +1,273 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>网站连接测试 · Lance Zhou</title>
-  <style>
-    :root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
-    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #f2f5fa; color: #172033; }
-    main { width: min(90vw, 38rem); padding: 2.5rem; border-radius: 1rem; background: white; box-shadow: 0 12px 40px #17203318; }
-    h1 { margin: 0 0 .75rem; font-size: clamp(1.8rem, 5vw, 2.6rem); }
-    .badge { display: inline-block; padding: .3rem .7rem; border-radius: 999px; background: #e6f5eb; color: #176b3a; font-weight: 600; }
-    small { color: #5a6678; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lance Zhou · 周阳 — 小提琴演奏与音乐教育</title>
+<meta name="description" content="周阳（Lance Zhou），小提琴演奏者、音乐教育研究者，四川文理学院音乐与演艺学院副教授。研究聚焦小提琴教学法、室内乐教育与 AI 辅助曲谱分析。">
+<meta name="author" content="Lance Zhou">
+<link rel="canonical" href="https://lancezhou-violin.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Lance Zhou · 周阳 — 小提琴演奏与音乐教育">
+<meta property="og:description" content="小提琴演奏者 · 音乐教育研究者 · 四川文理学院音乐与演艺学院副教授">
+<meta property="og:url" content="https://lancezhou-violin.github.io/">
+<meta property="og:image" content="https://lancezhou-violin.github.io/assets/photo-square.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1a18'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23e8e2d6' font-family='Georgia,serif'%3E周%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1b1a18; --ink-soft:#4a4741; --paper:#faf8f4; --card:#ffffff;
+    --line:#e3ded3; --accent:#8a6a3f; --accent-soft:#f1e9dc;
+    --max:44rem; --radius:14px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC","Noto Serif CJK SC",serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#ece7dd; --ink-soft:#a9a49a; --paper:#151412; --card:#1d1b18;
+           --line:#312e29; --accent:#d3ab73; --accent-soft:#2a2620; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+       font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-underline-offset:.18em}
+  .wrap{width:min(92vw,var(--max));margin:0 auto}
+
+  /* language switching */
+  [data-lang="zh"] .en{display:none}
+  [data-lang="en"] .zh{display:none}
+
+  header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);
+         backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:.7rem 0;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-weight:600;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
+  nav ul{display:flex;gap:1.05rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+  nav a{color:var(--ink-soft);text-decoration:none;font-size:.9rem}
+  nav a:hover{color:var(--accent)}
+  .langbtn{border:1px solid var(--line);background:var(--card);color:var(--ink-soft);
+           border-radius:999px;padding:.28rem .8rem;font-size:.82rem;cursor:pointer;font-family:inherit}
+  .langbtn:hover{color:var(--accent);border-color:var(--accent)}
+
+  section{padding:3.4rem 0 1rem}
+  h1{font-family:var(--serif);font-size:clamp(2.1rem,6vw,3.1rem);line-height:1.15;margin:.2rem 0 .6rem;font-weight:600}
+  h2{font-family:var(--serif);font-size:1.35rem;margin:0 0 1.1rem;font-weight:600;letter-spacing:.01em}
+  h2::after{content:"";display:block;width:2.2rem;height:2px;background:var(--accent);margin-top:.5rem;opacity:.55}
+  h3{font-size:1.02rem;margin:0 0 .35rem;font-weight:650}
+  p{margin:0 0 1rem}
+  .muted{color:var(--ink-soft)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-items:center;
+        padding-top:2.6rem;padding-bottom:1.2rem}
+  @media (min-width:44rem){ .hero{grid-template-columns:1.35fr .9fr;gap:2.4rem} }
+  .eyebrow{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 .5rem}
+  .role{font-size:1.02rem;color:var(--ink-soft);margin:0 0 1.4rem}
+  .portrait{margin:0}
+  .portrait img{width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line);
+                display:block;box-shadow:0 18px 44px #1b1a1814}
+  .portrait figcaption{font-size:.78rem;color:var(--ink-soft);margin-top:.55rem;text-align:right}
+  .cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.4rem}
+  .btn{display:inline-block;padding:.6rem 1.15rem;border-radius:999px;text-decoration:none;font-size:.92rem;
+       border:1px solid var(--accent);color:var(--accent);background:transparent}
+  .btn.solid{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+  .btn:hover{opacity:.86}
+
+  /* cards */
+  .grid{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
+  @media (min-width:40rem){ .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.15rem 1.25rem}
+  .card p{margin:0;font-size:.95rem;color:var(--ink-soft)}
+  .card p+p{margin-top:.5rem}
+  .tag{display:inline-block;font-size:.74rem;letter-spacing:.06em;color:var(--accent);
+       background:var(--accent-soft);border-radius:999px;padding:.16rem .6rem;margin-bottom:.6rem}
+
+  /* list */
+  ul.plain{list-style:none;margin:0;padding:0}
+  ul.plain li{padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  ul.plain li:last-child{border-bottom:0}
+  ul.plain li span.when{color:var(--ink-soft);font-size:.85rem;margin-left:.5rem}
+  .pub{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+       border-radius:8px;padding:1rem 1.15rem;font-size:.94rem;margin-top:.4rem}
+  .pub .doi{font-size:.85rem;word-break:break-all}
+
+  footer{border-top:1px solid var(--line);margin-top:3.4rem;padding:1.6rem 0 2.4rem;
+         font-size:.82rem;color:var(--ink-soft);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
 </head>
 <body>
-  <main>
-    <p class="badge">GitHub Pages 测试页面</p>
-    <h1>连接成功 👋</h1>
-    <p>这是 <strong>lancezhou-violin.github.io</strong> 仓库的测试首页。</p>
-    <p>如果你能在公开网址看到此页面，说明网页已成功发布。</p>
-    <small>创建日期：2026 年 9 月 23 日 · 此文件可随时替换</small>
-  </main>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">周阳 · Lance Zhou</a>
+    <nav aria-label="sections">
+      <ul>
+        <li><a href="#about"><span class="zh">简介</span><span class="en">About</span></a></li>
+        <li><a href="#research"><span class="zh">研究</span><span class="en">Research</span></a></li>
+        <li><a href="#teaching"><span class="zh">教学</span><span class="en">Teaching</span></a></li>
+        <li><a href="#performance"><span class="zh">演奏</span><span class="en">Performance</span></a></li>
+        <li><a href="#contact"><span class="zh">联系</span><span class="en">Contact</span></a></li>
+      </ul>
+    </nav>
+    <button class="langbtn" id="langbtn" type="button" aria-label="Switch language">
+      <span class="zh">EN</span><span class="en">中文</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow"><span class="zh">小提琴 · 音乐教育 · 研究</span><span class="en">Violin · Music Education · Research</span></p>
+      <h1>周阳<span class="muted" style="font-size:.55em;font-weight:400"> / Lance Zhou</span></h1>
+      <p class="role">
+        <span class="zh">小提琴演奏者 · 音乐教育研究者<br>四川文理学院 音乐与演艺学院 副教授</span>
+        <span class="en">Violinist · Music education researcher<br>Associate Professor, School of Music and Performing Arts, Sichuan University of Arts and Science</span>
+      </p>
+      <div class="cta">
+        <a class="btn solid" href="#research"><span class="zh">研究方向</span><span class="en">Research</span></a>
+        <a class="btn" href="mailto:zy_xtq@163.com"><span class="zh">联系我</span><span class="en">Get in touch</span></a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="assets/photo.jpg" width="1000" height="1500" alt="Lance Zhou 周阳">
+    </figure>
+  </section>
+
+  <section id="about" class="wrap">
+    <h2><span class="zh">简介</span><span class="en">About</span></h2>
+    <p>
+      <span class="zh">周阳，音乐艺术博士（DMA），现任四川文理学院音乐与演艺学院副教授。先后就读于中央音乐学院（小提琴演奏学士）、伯克利波士顿音乐学院（小提琴演奏硕士）与亚利桑那大学（小提琴演奏博士，辅修音乐教育学，2024）。</span>
+      <span class="en">Lance Zhou holds a Doctor of Musical Arts in Violin Performance with a minor in Music Education, and is currently Associate Professor at the School of Music and Performing Arts, Sichuan University of Arts and Science. He studied at the Central Conservatory of Music (BM, Violin Performance), Boston Conservatory at Berklee (MM, Violin Performance), and the University of Arizona (DMA, 2024).</span>
+    </p>
+    <p>
+      <span class="zh">他的工作横跨舞台与课堂：作为演奏者，曾任职于亚利桑那交响乐团及歌剧乐团并参与室内乐与音乐节演出；作为教师，主持小提琴演奏与乐队建设相关课程。研究兴趣集中在三个方向——小提琴教学法与教学曲目体系、室内乐教育的低门槛协作路径，以及人工智能在曲谱分析与教学曲库中的应用。</span>
+      <span class="en">His work spans stage and classroom. As a performer he has played with the Arizona Symphony and Opera Orchestra and in chamber music and festival settings; as a teacher he leads courses in violin performance and school ensemble building. His research focuses on three areas: violin pedagogy and graded teaching repertoire, low-barrier collaborative pathways into chamber music, and applications of AI to score analysis and teaching libraries.</span>
+    </p>
+  </section>
+
+  <section id="research" class="wrap">
+    <h2><span class="zh">研究</span><span class="en">Research</span></h2>
+    <div class="grid">
+      <article class="card">
+        <span class="tag"><span class="zh">小提琴教学法</span><span class="en">Violin Pedagogy</span></span>
+        <h3><span class="zh">教学曲目的难度分级与递进路径</span><span class="en">Grading and progression in teaching repertoire</span></h3>
+        <p>
+          <span class="zh">以 Mazas 小提琴二重奏体系为线索，分析其作品的教学结构，并建立调性、速度、左右手技术难度的多维评分框架，用于规划从入门到专业的学习轨迹。博士论文：<em>Des Sons Harmoniques: Mazas's Legacy on Violin Pedagogy</em>（2024）。</span>
+          <span class="en">Using Mazas's violin duos as a thread, this work analyses their pedagogical structure and builds a multi-dimensional rating framework (key, tempo, left- and right-hand demands) for planning learning trajectories from beginner to advanced. DMA dissertation: <em>Des Sons Harmoniques: Mazas's Legacy on Violin Pedagogy</em> (2024).</span>
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="tag"><span class="zh">室内乐教育</span><span class="en">Chamber Music Education</span></span>
+        <h3><span class="zh">以熟悉曲目为入口的协作教学</span><span class="en">Collaborative teaching through familiar repertoire</span></h3>
+        <p>
+          <span class="zh">研究"一人一声部、相互倾听、角色独立、协同对话"的室内乐学习机制，通过分层声部编配、角色轮换与即兴伴奏脚手架降低入门门槛：入口变了，目标没变。</span>
+          <span class="en">A study of chamber music as a learning mechanism — one player per part, mutual listening, independent roles, collaborative dialogue — lowering the entry barrier through layered part-writing, rotating roles, and improvisational accompaniment scaffolds.</span>
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="tag"><span class="zh">AI + 音乐教育</span><span class="en">AI &amp; Music Education</span></span>
+        <h3><span class="zh">曲谱智能分析与动态教学曲库</span><span class="en">Intelligent score analysis and dynamic teaching libraries</span></h3>
+        <p>
+          <span class="zh">探索光学乐谱识别（OMR）、多模态曲谱分析与可计算的技术难度参数，把演奏难点转成可检索、可推荐的数据，服务于因材施教。</span>
+          <span class="en">Exploring optical music recognition (OMR), multi-modal score analysis, and computable difficulty parameters, turning technical demands into searchable, recommendable data for adaptive teaching.</span>
+        </p>
+      </article>
+    </div>
+
+    <h3 style="margin-top:1.8rem"><span class="zh">发表</span><span class="en">Publication</span></h3>
+    <div class="pub">
+      <span class="zh">周阳（2026）。成长型思维与心理灵活性在小提琴学习者表演焦虑中的调节作用。《Frontiers in Psychology》，17，1899477。</span>
+      <span class="en">Zhou, Y. (2026). The moderating roles of a "growth mindset" and psychological flexibility on performance anxiety in violin learners. <em>Frontiers in Psychology</em>, 17, 1899477.</span>
+      <div class="doi">DOI: <a href="https://doi.org/10.3389/fpsyg.2026.1899477" target="_blank" rel="noopener">10.3389/fpsyg.2026.1899477</a></div>
+    </div>
+  </section>
+
+  <section id="teaching" class="wrap">
+    <h2><span class="zh">教学</span><span class="en">Teaching</span></h2>
+    <div class="grid two">
+      <article class="card">
+        <h3><span class="zh">现任课程</span><span class="en">Courses</span></h3>
+        <p><span class="zh">《小提琴演奏》（专业核心课程，器乐 1–3）</span><span class="en">Violin Performance (core course, semesters 1–3)</span></p>
+        <p><span class="zh">《中小学音乐课堂乐器与课外乐队建设》</span><span class="en">Classroom Instruments and School Ensemble Building</span></p>
+      </article>
+      <article class="card">
+        <h3><span class="zh">可提供</span><span class="en">Available for</span></h3>
+        <p><span class="zh">一对一与小组小提琴教学 · 室内乐重奏与排练指导 · 中英双语教学 · 留学申请与作品集指导</span><span class="en">One-to-one and group violin lessons · chamber coaching · bilingual (Chinese/English) instruction · audition and portfolio guidance</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="performance" class="wrap">
+    <h2><span class="zh">演奏</span><span class="en">Performance</span></h2>
+    <ul class="plain">
+      <li><span class="zh">亚利桑那交响乐团及歌剧乐团 · 首席 / 副首席 / 乐团成员</span><span class="en">Arizona Symphony and Opera Orchestra · principal, associate principal, section</span><span class="when">2021–2023</span></li>
+      <li><span class="zh">Oracle Chamber Music Festival（美国亚利桑那）· 音乐节助教</span><span class="en">Oracle Chamber Music Festival, Arizona · teaching assistant</span><span class="when">2023–2024</span></li>
+      <li><span class="zh">Classical Oasis（波士顿 / 迈阿密）· 小提琴独奏</span><span class="en">Classical Oasis, Boston / Miami · violin soloist</span><span class="when">2018–2019</span></li>
+      <li><span class="zh">中国青年交响乐团（北京）· 小提琴演奏员</span><span class="en">China Youth Symphony Orchestra, Beijing · violinist</span><span class="when">2014–2016</span></li>
+      <li><span class="zh">独奏与室内乐音乐会 · 中国、美国多地</span><span class="en">Solo and chamber music recitals · China and the United States</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="wrap">
+    <h2><span class="zh">联系</span><span class="en">Contact</span></h2>
+    <p>
+      <span class="zh">欢迎学生、合作者与同行来信。</span>
+      <span class="en">Students, collaborators, and colleagues are welcome to write.</span>
+    </p>
+    <ul class="plain">
+      <li><span class="zh">邮箱</span><span class="en">Email</span>：<a href="mailto:zy_xtq@163.com">zy_xtq@163.com</a></li>
+      <li><span class="zh">单位</span><span class="en">Affiliation</span>：<span class="zh">四川文理学院 音乐与演艺学院</span><span class="en">School of Music and Performing Arts, Sichuan University of Arts and Science</span></li>
+      <li>GitHub：<a href="https://github.com/lancezhou-violin" target="_blank" rel="noopener">lancezhou-violin</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Lance Zhou · 周阳</span>
+  <span><span class="zh">最近更新</span><span class="en">Last updated</span> 2026-09-23</span>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Lance Zhou",
+  "alternateName":"周阳",
+  "jobTitle":"Associate Professor",
+  "url":"https://lancezhou-violin.github.io/",
+  "email":"mailto:zy_xtq@163.com",
+  "image":"https://lancezhou-violin.github.io/assets/photo-square.jpg",
+  "affiliation":{"@type":"Organization","name":"Sichuan University of Arts and Science"},
+  "alumniOf":[
+    {"@type":"CollegeOrUniversity","name":"University of Arizona"},
+    {"@type":"CollegeOrUniversity","name":"Boston Conservatory at Berklee"},
+    {"@type":"CollegeOrUniversity","name":"Central Conservatory of Music"}
+  ],
+  "knowsAbout":["Violin performance","Violin pedagogy","Chamber music education","Music education","AI-assisted score analysis"],
+  "sameAs":["https://github.com/lancezhou-violin"]
+}
+</script>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem('site-lang'); } catch(e){}
+  var initial = saved || ((navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+  root.dataset.lang = initial;
+  root.lang = initial === 'zh' ? 'zh-CN' : 'en';
+  var btn = document.getElementById('langbtn');
+  btn.addEventListener('click', function(){
+    var next = root.dataset.lang === 'zh' ? 'en' : 'zh';
+    root.dataset.lang = next;
+    root.lang = next === 'zh' ? 'zh-CN' : 'en';
+    try { localStorage.setItem('site-lang', next); } catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
