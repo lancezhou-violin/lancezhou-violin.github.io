@@ -11,87 +11,65 @@
 <meta property="og:title" content="Lance Zhou · 周阳 — 小提琴演奏与音乐教育">
 <meta property="og:description" content="小提琴演奏者 · 音乐教育研究者 · 四川文理学院音乐与演艺学院副教授">
 <meta property="og:url" content="https://lancezhou-violin.github.io/">
-<meta property="og:image" content="https://lancezhou-violin.github.io/assets/photo-square.jpg">
+<meta property="og:image" content="https://lancezhou-violin.github.io/assets/photo-square.jpg?v=2">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1a18'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23e8e2d6' font-family='Georgia,serif'%3E周%3C/text%3E%3C/svg%3E">
 <style>
-  :root{
-    --ink:#1b1a18; --ink-soft:#4a4741; --paper:#faf8f4; --card:#ffffff;
-    --line:#e3ded3; --accent:#8a6a3f; --accent-soft:#f1e9dc;
-    --max:44rem; --radius:14px;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC","Noto Serif CJK SC",serif;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --ink:#ece7dd; --ink-soft:#a9a49a; --paper:#151412; --card:#1d1b18;
-           --line:#312e29; --accent:#d3ab73; --accent-soft:#2a2620; }
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
-       font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-underline-offset:.18em}
-  .wrap{width:min(92vw,var(--max));margin:0 auto}
-
-  /* language switching */
-  [data-lang="zh"] .en{display:none}
-  [data-lang="en"] .zh{display:none}
-
-  header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);
-         backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:.7rem 0;flex-wrap:wrap}
-  .brand{font-family:var(--serif);font-weight:600;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
-  nav ul{display:flex;gap:1.05rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
-  nav a{color:var(--ink-soft);text-decoration:none;font-size:.9rem}
-  nav a:hover{color:var(--accent)}
-  .langbtn{border:1px solid var(--line);background:var(--card);color:var(--ink-soft);
-           border-radius:999px;padding:.28rem .8rem;font-size:.82rem;cursor:pointer;font-family:inherit}
-  .langbtn:hover{color:var(--accent);border-color:var(--accent)}
-
-  section{padding:3.4rem 0 1rem}
-  h1{font-family:var(--serif);font-size:clamp(2.1rem,6vw,3.1rem);line-height:1.15;margin:.2rem 0 .6rem;font-weight:600}
-  h2{font-family:var(--serif);font-size:1.35rem;margin:0 0 1.1rem;font-weight:600;letter-spacing:.01em}
-  h2::after{content:"";display:block;width:2.2rem;height:2px;background:var(--accent);margin-top:.5rem;opacity:.55}
-  h3{font-size:1.02rem;margin:0 0 .35rem;font-weight:650}
-  p{margin:0 0 1rem}
-  .muted{color:var(--ink-soft)}
-
-  /* hero */
-  .hero{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-items:center;
-        padding-top:2.6rem;padding-bottom:1.2rem}
-  @media (min-width:44rem){ .hero{grid-template-columns:1.35fr .9fr;gap:2.4rem} }
-  .eyebrow{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 .5rem}
-  .role{font-size:1.02rem;color:var(--ink-soft);margin:0 0 1.4rem}
-  .portrait{margin:0}
-  .portrait img{width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line);
-                display:block;box-shadow:0 18px 44px #1b1a1814}
-  .portrait figcaption{font-size:.78rem;color:var(--ink-soft);margin-top:.55rem;text-align:right}
-  .cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.4rem}
-  .btn{display:inline-block;padding:.6rem 1.15rem;border-radius:999px;text-decoration:none;font-size:.92rem;
-       border:1px solid var(--accent);color:var(--accent);background:transparent}
-  .btn.solid{background:var(--accent);color:var(--paper);border-color:var(--accent)}
-  .btn:hover{opacity:.86}
-
-  /* cards */
-  .grid{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
-  @media (min-width:40rem){ .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))} }
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.15rem 1.25rem}
-  .card p{margin:0;font-size:.95rem;color:var(--ink-soft)}
-  .card p+p{margin-top:.5rem}
-  .tag{display:inline-block;font-size:.74rem;letter-spacing:.06em;color:var(--accent);
-       background:var(--accent-soft);border-radius:999px;padding:.16rem .6rem;margin-bottom:.6rem}
-
-  /* list */
-  ul.plain{list-style:none;margin:0;padding:0}
-  ul.plain li{padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
-  ul.plain li:last-child{border-bottom:0}
-  ul.plain li span.when{color:var(--ink-soft);font-size:.85rem;margin-left:.5rem}
-  .pub{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
-       border-radius:8px;padding:1rem 1.15rem;font-size:.94rem;margin-top:.4rem}
-  .pub .doi{font-size:.85rem;word-break:break-all}
-
-  footer{border-top:1px solid var(--line);margin-top:3.4rem;padding:1.6rem 0 2.4rem;
-         font-size:.82rem;color:var(--ink-soft);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+:root{--paper:#f5f3ec;--ink:#173b33;--muted:#5b655e;--line:#d6dbd1;--gold:#8c7045;--serif:Georgia,"Songti SC",serif;--sans:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 var(--sans);-webkit-font-smoothing:antialiased}
+[data-lang="zh"] .en,[data-lang="en"] .zh{display:none}
+a{color:inherit;text-underline-offset:5px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:6px}
+.wrap{width:min(1120px,88%);margin:auto}
+header{border-bottom:1px solid var(--line);background:var(--paper)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:92px}
+.brand{text-decoration:none;font:22px var(--serif);white-space:nowrap}
+nav ul{display:flex;gap:26px;list-style:none;padding:0;margin:0}
+nav a{text-decoration:none;font-size:13px;color:var(--muted)}
+nav a:hover{color:var(--ink);text-decoration:underline}
+.langbtn{border:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 13px;cursor:pointer}
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:8%;align-items:center;padding:64px 0 80px;min-height:740px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 32px}
+h1{font:normal clamp(64px,7.8vw,106px)/1.06 var(--serif);letter-spacing:-.055em;margin:0 0 32px}
+h1 .name-cn{display:block;font:normal 28px/1.8 var(--serif);letter-spacing:.3em;margin-top:24px}
+.role{font-size:14px;color:var(--muted);max-width:420px}
+.hero-intro{font:normal 24px/1.6 var(--serif);margin:28px 0;color:var(--ink)}
+.portrait{margin:0;position:relative}
+.portrait:before{content:"";position:absolute;inset:22px -18px -18px 22px;border:1px solid #b8c1b2;z-index:-1}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+.portrait figcaption{font-size:10px;letter-spacing:.18em;margin-top:14px;text-transform:uppercase;color:var(--muted)}
+.cta{margin-top:36px;display:flex;gap:24px;flex-wrap:wrap}
+.btn{text-decoration:none;font-size:13px;border-bottom:1px solid var(--ink);padding:10px 0}
+.btn:after{content:" ↗";margin-left:20px}
+h2{font:normal 42px/1.25 var(--serif);margin:0 0 36px;letter-spacing:-.02em}
+h2:before{display:block;font:11px var(--sans);letter-spacing:.18em;color:var(--gold);margin-bottom:18px}
+#about h2:before{content:"01 / PROFILE"}
+#research h2:before{content:"02 / RESEARCH"}
+#teaching h2:before{content:"03 / TEACHING"}
+#performance h2:before{content:"04 / PERFORMANCE"}
+#about{display:grid;grid-template-columns:1fr 2fr;column-gap:9%}
+#about h2{grid-row:1/3}
+p{margin:0 0 20px}
+#about p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr));gap:60px}
+.card{border-top:1px solid var(--ink);padding:24px 0 0}
+.tag{display:block;font-size:11px;letter-spacing:.08em;color:var(--gold);margin-bottom:20px}
+h3{font:normal 23px/1.5 var(--serif);margin:0 0 18px}
+.card p{font-size:14px;color:var(--muted)}
+.pub{padding:28px 32px;background:#e9ece3;font-size:14px;margin-top:24px}
+.doi{margin-top:12px;font-size:12px;overflow-wrap:anywhere}
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding:22px 0;font-size:15px}
+.when{white-space:nowrap;color:var(--gold);font-size:13px}
+footer{display:flex;justify-content:space-between;gap:24px;padding:32px 0 48px!important;font-size:11px;color:var(--muted);letter-spacing:.04em}
+@media(min-width:1500px){.hero{min-height:800px}}
+@media(max-width:800px){.bar{flex-wrap:wrap;padding:20px 0;gap:14px}.brand{font-size:20px}nav{order:3;width:100%}nav ul{justify-content:space-between;gap:12px}.hero{min-height:0;gap:7%;padding:48px 0 60px}h1{font-size:64px}.hero-intro{font-size:20px}.grid{grid-template-columns:1fr;gap:32px}#about{grid-template-columns:1fr}#about h2{grid-row:auto}section{padding:60px 0}}
+@media(max-width:540px){.wrap{width:86%}.hero{grid-template-columns:1fr;gap:44px}h1{font-size:76px}.eyebrow{font-size:10px;margin-bottom:24px}.portrait{width:92%}.hero-intro{max-width:300px}.grid.two{grid-template-columns:1fr;gap:30px}h2{font-size:34px}ul.plain li{flex-direction:column;gap:8px}.pub{padding:24px}footer{flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -105,7 +83,6 @@
         <li><a href="#research"><span class="zh">研究</span><span class="en">Research</span></a></li>
         <li><a href="#teaching"><span class="zh">教学</span><span class="en">Teaching</span></a></li>
         <li><a href="#performance"><span class="zh">演奏</span><span class="en">Performance</span></a></li>
-        <li><a href="#contact"><span class="zh">联系</span><span class="en">Contact</span></a></li>
       </ul>
     </nav>
     <button class="langbtn" id="langbtn" type="button" aria-label="Switch language">
@@ -119,18 +96,20 @@
   <section class="hero wrap">
     <div>
       <p class="eyebrow"><span class="zh">小提琴 · 音乐教育 · 研究</span><span class="en">Violin · Music Education · Research</span></p>
-      <h1>周阳<span class="muted" style="font-size:.55em;font-weight:400"> / Lance Zhou</span></h1>
+      <h1>Lance<br>Zhou<span class="name-cn">周阳</span></h1>
       <p class="role">
         <span class="zh">小提琴演奏者 · 音乐教育研究者<br>四川文理学院 音乐与演艺学院 副教授</span>
         <span class="en">Violinist · Music education researcher<br>Associate Professor, School of Music and Performing Arts, Sichuan University of Arts and Science</span>
       </p>
+      <p class="hero-intro"><span class="zh">在演奏、教学与研究之间，<br>探索音乐的表达与传承。</span><span class="en">Connecting musical expression,<br>learning and discovery.</span></p>
       <div class="cta">
         <a class="btn solid" href="#research"><span class="zh">研究方向</span><span class="en">Research</span></a>
-        <a class="btn" href="mailto:zy_xtq@163.com"><span class="zh">联系我</span><span class="en">Get in touch</span></a>
+        <a class="btn" href="#about"><span class="zh">个人简介</span><span class="en">Profile</span></a>
       </div>
     </div>
     <figure class="portrait">
-      <img src="assets/photo.jpg" width="1000" height="1500" alt="Lance Zhou 周阳">
+      <img src="assets/photo.jpg?v=2" width="1000" height="1500" fetchpriority="high" alt="Lance Zhou 周阳">
+      <figcaption>Violinist &amp; Educator</figcaption>
     </figure>
   </section>
 
@@ -194,7 +173,7 @@
         <p><span class="zh">《中小学音乐课堂乐器与课外乐队建设》</span><span class="en">Classroom Instruments and School Ensemble Building</span></p>
       </article>
       <article class="card">
-        <h3><span class="zh">可提供</span><span class="en">Available for</span></h3>
+        <h3><span class="zh">教学实践</span><span class="en">Teaching practice</span></h3>
         <p><span class="zh">一对一与小组小提琴教学 · 室内乐重奏与排练指导 · 中英双语教学 · 留学申请与作品集指导</span><span class="en">One-to-one and group violin lessons · chamber coaching · bilingual (Chinese/English) instruction · audition and portfolio guidance</span></p>
       </article>
     </div>
@@ -211,18 +190,6 @@
     </ul>
   </section>
 
-  <section id="contact" class="wrap">
-    <h2><span class="zh">联系</span><span class="en">Contact</span></h2>
-    <p>
-      <span class="zh">欢迎学生、合作者与同行来信。</span>
-      <span class="en">Students, collaborators, and colleagues are welcome to write.</span>
-    </p>
-    <ul class="plain">
-      <li><span class="zh">邮箱</span><span class="en">Email</span>：<a href="mailto:zy_xtq@163.com">zy_xtq@163.com</a></li>
-      <li><span class="zh">单位</span><span class="en">Affiliation</span>：<span class="zh">四川文理学院 音乐与演艺学院</span><span class="en">School of Music and Performing Arts, Sichuan University of Arts and Science</span></li>
-      <li>GitHub：<a href="https://github.com/lancezhou-violin" target="_blank" rel="noopener">lancezhou-violin</a></li>
-    </ul>
-  </section>
 
 </main>
 
@@ -239,16 +206,14 @@
   "alternateName":"周阳",
   "jobTitle":"Associate Professor",
   "url":"https://lancezhou-violin.github.io/",
-  "email":"mailto:zy_xtq@163.com",
-  "image":"https://lancezhou-violin.github.io/assets/photo-square.jpg",
+  "image":"https://lancezhou-violin.github.io/assets/photo-square.jpg?v=2",
   "affiliation":{"@type":"Organization","name":"Sichuan University of Arts and Science"},
   "alumniOf":[
     {"@type":"CollegeOrUniversity","name":"University of Arizona"},
     {"@type":"CollegeOrUniversity","name":"Boston Conservatory at Berklee"},
     {"@type":"CollegeOrUniversity","name":"Central Conservatory of Music"}
   ],
-  "knowsAbout":["Violin performance","Violin pedagogy","Chamber music education","Music education","AI-assisted score analysis"],
-  "sameAs":["https://github.com/lancezhou-violin"]
+  "knowsAbout":["Violin performance","Violin pedagogy","Chamber music education","Music education","AI-assisted score analysis"]
 }
 </script>
 
@@ -257,7 +222,7 @@
   var root = document.documentElement;
   var saved = null;
   try { saved = localStorage.getItem('site-lang'); } catch(e){}
-  var initial = saved || ((navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+  var initial = (saved === 'zh' || saved === 'en' ? saved : null) || ((navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
   root.dataset.lang = initial;
   root.lang = initial === 'zh' ? 'zh-CN' : 'en';
   var btn = document.getElementById('langbtn');
